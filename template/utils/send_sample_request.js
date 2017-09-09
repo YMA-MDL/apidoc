@@ -97,9 +97,11 @@ define([
       var ajaxRequest = {
           url        : url,
           headers    : header,
-          data       : param,
+          data       : JSON.stringify(param),
+          contentType: "application/json; charset=utf-8",
           type       : type.toUpperCase(),
           success    : displaySuccess,
+          dataType   : 'json',
           error      : displayError
       };
 
